@@ -4,7 +4,7 @@ import { IoIosMic } from "react-icons/io";
 
 export default function SpeakersHero() {
   return (
-    <section className="pt-36 pb-24 px-6 md:px-16 relative bg-(--navy)">
+    <section className="pt-36 pb-24 px-6 md:px-16 relative bg-(--navy) w-full">
       {/* glow */}
       <div className="absolute bg-radial from-[#83CFFF]/15 blur-xl -top-40 left-75 to-transparent h-107.5 w-107.5" />
 
