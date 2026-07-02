@@ -29,9 +29,9 @@ export default function ContactForm() {
   return (
     <section className="bg-(--navy) py-20 px-6 md:px-16 flex flex-col gap-6 items-center">
       <span className="flex items-center w-[80%] gap-5 justify-center">
-        <hr className="w-[35%] border-white/30" />
+        <hr className="w-[20%] md:w-[35%] border-white/30" />
         <p className="text-[#83CFFF] text-sm">GET IN TOUCH WITH US</p>
-        <hr className="w-[35%] border-white/30" />
+        <hr className="w-[20%] md:w-[35%] border-white/30" />
       </span>
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-8 items-center">
         {/* Left: Form */}

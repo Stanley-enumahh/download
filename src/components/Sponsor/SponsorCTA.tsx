@@ -13,17 +13,17 @@ export default function SponsorCTA() {
           Sponsorship Opportunities
         </span>
 
-        <h2 className="text-4xl text-[#D3E4FE] max-w-5xl md:text-5xl font-bold leading-tight">
+        <h2 className="text-2xl text-[#D3E4FE] max-w-3xl md:max-w-5xl md:text-5xl font-bold leading-tight">
           Partner with Africa's Digital Future
         </h2>
 
-        <p className="text-white/50 font-medium text-base max-w-3xl">
+        <p className="text-white/50 font-medium text-base max-w-2xl md:max-w-3xl">
           Elevate your brand visibility, connect with elite tech talent, and
           drive meaningful community impact at the continent's premier
           technology summit.
         </p>
 
-        <button className="flex items-center gap-2 cursor-pointer bg-[#BDD733] shadow-[#F48636] shadow-md transition-colors font-medium px-8 py-4 rounded-xl text-sm mt-2">
+        <button className="flex items-center gap-2 text-black cursor-pointer bg-[#BDD733] shadow-[#F48636] shadow-md transition-colors font-medium px-8 py-4 rounded-xl text-sm mt-2">
           <LuHandHelping size={18} />
           Become a Sponsor
         </button>

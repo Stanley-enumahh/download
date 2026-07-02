@@ -15,7 +15,7 @@ export default function NewsLetter() {
       <div className="absolute inset-0 bg-black/60" />
 
       {/* Content */}
-      <div className="relative z-10 space-y-6  md:px-0 justify-center px-6 max-w-3xl">
+      <div className="relative z-10 space-y-6 md:px-0 justify-center px-6 max-w-3xl">
         <h1 className="font-bold text-3xl md:text-5xl">Get Updates</h1>
 
         <p className="font-bold text-base md:text-xl">
