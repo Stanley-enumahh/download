@@ -55,7 +55,7 @@ export default function AboutUs() {
           <h3 className="text-lg md:text-3xl text-(--orange) font-semibold">
             Our Vision
           </h3>
-          <p className="leading-7.5 md:text-base text-sm">
+          <p className="leading-7.5 text-white/80 md:text-base text-sm">
             To become Africa’s leading grassroots-driven technology and
             innovation summit—bridging the gap between emerging talents and
             global opportunities by empowering individuals and communities
@@ -67,7 +67,7 @@ export default function AboutUs() {
           <h3 className="text-lg md:text-3xl text-(--orange) font-semibold">
             Our Mission
           </h3>
-          <p className="leading-7.5 md:text-base text-sm">
+          <p className="leading-7.5 md:text-base text-sm text-white/80">
             Foster innovation, creativity, and entrepreneurship by showcasing
             emerging technologies and ideas Connect startups, tech enthusiasts,
             ecosystem builders, and industry leaders for knowledge exchange and
@@ -75,7 +75,7 @@ export default function AboutUs() {
             visibility needed to solve real-world problems through technology
             Drive inclusive digital transformation that elevates the
             socioeconomic potential of underserved regions, starting with Nnewi
-            and beynd.
+            and beyond.
           </p>
         </div>
       </div>

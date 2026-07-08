@@ -16,9 +16,11 @@ export default function NewsLetter() {
 
       {/* Content */}
       <div className="relative z-10 space-y-6 md:px-0 justify-center px-6 max-w-3xl">
-        <h1 className="font-bold text-3xl md:text-5xl">Get Updates</h1>
+        <h1 className="font-bold text-3xl md:text-5xl text-white">
+          Get Updates
+        </h1>
 
-        <p className="font-bold text-base md:text-xl">
+        <p className="font-bold text-base md:text-xl text-white/80">
           Subscribe to our newsletter for the latest updates, speaker
           announcements, and exclusive insights from Download.
         </p>

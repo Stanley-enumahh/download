@@ -4,51 +4,99 @@ import amina from "@/images/speakers/anima.png";
 import samuel from "@/images/speakers/samuel.png";
 import sarah from "@/images/speakers/sarah.png";
 
+// const keynotes = [
+//   {
+//     img: amina,
+//     tag: "OPENING KEYNOTE",
+//     name: "Dr. Amina Diallo",
+//     role: "Chief AI Scientist",
+//     company: "FutureScale Solutions",
+//   },
+//   {
+//     img: samuel,
+//     tag: "CLOSING KEYNOTE",
+//     name: "Samuel Osei",
+//     role: "Founder & CEO",
+//     company: "Nexus Finance",
+//   },
+// ];
+
+// const otherSpeakers = [
+//   {
+//     img: sarah,
+//     topic: "AI & ML",
+//     name: "Sarah Mensah",
+//     role: "Lead Machine Learning Engineer",
+//     company: "DataBricks Africa",
+//   },
+//   {
+//     img: sarah,
+//     topic: "Design Systems",
+//     name: "David Okafor",
+//     role: "Head of Product Design",
+//     company: "Stripe",
+//   },
+//   {
+//     img: sarah,
+//     topic: "Product Strategy",
+//     name: "Nneka Uzo",
+//     role: "VP of Product",
+//     company: "Spotify",
+//   },
+//   {
+//     img: sarah,
+//     topic: "Fintech",
+//     name: "Kwame Mensah",
+//     role: "Co-Founder",
+//     company: "PayStack",
+//   },
+// ];
+
 const keynotes = [
   {
     img: amina,
     tag: "OPENING KEYNOTE",
-    name: "Dr. Amina Diallo",
-    role: "Chief AI Scientist",
-    company: "FutureScale Solutions",
+    name: "Guess Who?",
+    role: "Speaker to be announced",
+    company: "Coming Soon",
   },
   {
     img: samuel,
     tag: "CLOSING KEYNOTE",
-    name: "Samuel Osei",
-    role: "Founder & CEO",
-    company: "Nexus Finance",
+    name: "Guess Who?",
+    role: "Speaker to be announced",
+    company: "Coming Soon",
   },
 ];
 
 const otherSpeakers = [
   {
     img: sarah,
-    topic: "AI & ML",
-    name: "Sarah Mensah",
-    role: "Lead Machine Learning Engineer",
-    company: "DataBricks Africa",
+    topic: "Coming Soon",
+    name: "Guess Who?",
+    role: "Speaker to be announced",
+    company: "To Be Revealed",
   },
   {
     img: sarah,
-    topic: "Design Systems",
-    name: "David Okafor",
-    role: "Head of Product Design",
-    company: "Stripe",
+    topic: "Coming Soon",
+    name: "Guess Who?",
+    role: "Speaker to be announced",
+    company: "To Be Revealed",
   },
   {
     img: sarah,
-    topic: "Product Strategy",
-    name: "Nneka Uzo",
-    role: "VP of Product",
-    company: "Spotify",
+    topic: "Coming Soon",
+    name: "Guess Who?",
+    role: "Speaker to be announced",
+    company: "To Be Revealed",
   },
   {
     img: sarah,
-    topic: "Fintech",
-    name: "Kwame Mensah",
-    role: "Co-Founder",
-    company: "PayStack",
+    topic: "Coming Soon",
+    name: "Guess Who?",
+    role: "Speaker to be announced",
+    company: "To Be Revealed",
   },
 ];
 
@@ -81,16 +129,17 @@ export default function PreviousSpeakers() {
             {keynotes.map((speaker) => (
               <div
                 key={speaker.name}
-                className="relative rounded-[8px] border border-white/3 overflow-hidden h-80 md:h-[460px] bg-[#0d2140]"
+                className="relative rounded-lg border border-white/3 overflow-hidden h-80 md:h-115 bg-[#0d2140]"
               >
-                <Image
-                  src={speaker.img}
-                  alt={speaker.name}
-                  fill
-                  className="object-cover object-top"
-                />
+                {/*  image */}
+
+                <div className="absolute inset-0 bg-linear-to-br from-[#0E2A4F] via-[#123764] to-[#0B1F3A] flex items-center justify-center">
+                  <span className="text-white/15 text-3xl md:text-5xl font-bold uppercase tracking-[0.3em]">
+                    Guess Who?
+                  </span>
+                </div>
                 {/* Gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#031632]/80 via-[#031632]/40 to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-t from-[#031632]/80 via-[#031632]/40 to-transparent" />
 
                 {/* Content */}
                 <div className="absolute bottom-0 left-0 p-4 md:p-6 flex flex-col gap-2">
@@ -129,13 +178,8 @@ export default function PreviousSpeakers() {
                 className="bg-[#0a1e35] rounded-xl p-3 md:p-7 border border-white/10 backdrop-blur-md flex flex-col gap-4"
               >
                 {/* Avatar */}
-                <div className="relative w-14 h-14 rounded-full overflow-hidden border-2 border-[#1a3a5c]">
-                  <Image
-                    src={speaker.img}
-                    alt={speaker.name}
-                    fill
-                    className="object-cover"
-                  />
+                <div className="w-14 h-14 rounded-full border-2 border-[#1a3a5c] bg-[#102A47] flex items-center justify-center">
+                  <span className="text-[#83CFFF] text-xs font-bold">?</span>
                 </div>
 
                 {/* Topic tag */}

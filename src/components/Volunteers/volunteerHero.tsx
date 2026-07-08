@@ -15,7 +15,7 @@ export default function VolunteerHero() {
             Volunteering
           </span>
 
-          <h1 className="text-4xl md:text-5xl font-bold text-[#D3E4FE leading-tight">
+          <h1 className="text-4xl md:text-5xl font-bold text-[#D3E4FE] leading-tight">
             Why you should <br /> be a Volunteer at <br /> Download 2026
           </h1>
 

@@ -101,12 +101,12 @@ export default function Navbar() {
               </li>
             ))}
           </ul>
-          <a
-            href="#tickets"
+          <Link
+            href="/tickets"
             className="flex items-center gap-2 bg-(--orange) px-4 py-2.5 rounded-lg text-white font-semibold text-sm transition-opacity hover:opacity-90 whitespace-nowrap shrink-0"
           >
-            Buy Tickets <HiArrowTrendingUp size={16} />
-          </a>
+            See Tickets <HiArrowTrendingUp size={16} />
+          </Link>
         </div>
 
         {/* Mobile toggle */}
@@ -160,13 +160,13 @@ export default function Navbar() {
           ),
         )}
 
-        <a
-          href="#tickets"
+        <Link
+          href="/tickets"
           onClick={() => setMenuOpen(false)}
           className="flex items-center gap-2 px-5 py-2.5 rounded-lg text-white font-semibold text-sm w-fit bg-(--orange) mt-2"
         >
-          Buy Tickets <HiArrowTrendingUp size={16} />
-        </a>
+          See Tickets <HiArrowTrendingUp size={16} />
+        </Link>
       </div>
     </nav>
   );

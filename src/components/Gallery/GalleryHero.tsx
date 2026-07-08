@@ -16,23 +16,24 @@ export default function StartUpHero() {
           </span>
 
           <h1 className="text-4xl md:text-5xl font-bold text-[#D3E4FE] leading-tight">
-            Present Your <br /> Vision. Accelerate <br /> Your Growth.
+            Relive the <br /> Moments That Shaped Innovation
           </h1>
 
           <p className="text-[#C5C6CE] text-base leading-relaxed max-w-sm">
-            Showcase your innovation, gain strategic mentorship, attract
-            valuable opportunities, and position your startup on a global stage
-            of innovation.
+            Relive the energy, connections, and breakthrough moments that
+            defined the Download Tech Event experience.
           </p>
         </div>
 
         {/* Right: image placeholder */}
         <div className="flex-1 w-full">
-          <Image
+          {/* <Image
             src={startup}
             alt="Start-up hero image"
             className="w-full aspect-video"
-          />
+          /> */}
+
+          <div className="w-full aspect-video bg-[#0D55BE]"></div>
         </div>
       </div>
     </section>
