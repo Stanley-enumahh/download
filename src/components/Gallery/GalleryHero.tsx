@@ -4,7 +4,7 @@ import { IoRocketOutline } from "react-icons/io5";
 
 export default function GalleryHero() {
   return (
-    <section className="pt-36 pb-24 px-6 md:px-16 relative bg-(--navy)">
+    <section className="pt-36 pb-24 px-6 md:px-16 relative bg-(--navy) overflow-hidden">
       {/* glow */}
       <div className="absolute bg-radial from-[#83CFFF]/15 blur-xl -top-40 left-75  to-transparent h-107.5 w-107.5"></div>
       <div className="max-w-7xl gap-6 md:justify-between mx-auto flex flex-col md:flex-row items-center z-10">

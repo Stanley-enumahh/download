@@ -13,13 +13,17 @@ export default function Footer() {
       {/* stars */}
 
       <Image src={star1} alt="star" className="absolute bottom-4 left-8" />
-      <Image src={star2} alt="star" className="absolute top-38.5 right-6" />
+      <Image
+        src={star2}
+        alt="star"
+        className="absolute top-[45%] md:top-40 right-6"
+      />
 
       <section className="flex flex-col gap-10 md:flex-row justify-between">
         <div className="flex flex-col gap-4 max-w-xl">
           <Image src={logo} alt="logo" className="w-40 object-center h-fit" />
 
-          <p className="text-sm text-neutral-300">
+          <p className="text-sm text-neutral-300 leading-loose">
             Download is a forward-thinking annual conference that brings
             together bold minds, innovators, and digital leaders to explore how
             technology, media, and strategy can accelerate business growth,
@@ -55,13 +59,13 @@ export default function Footer() {
             <h2 className="font-bold md:text-base text-sm">EXPLORE</h2>
             <ul className="space-y-4 md:text-sm text-base">
               <li className="font-medium text-sm">
-                <Link href="">About us</Link>
+                <Link href="/">About us</Link>
               </li>
               <li className="font-medium text-sm">
                 <Link href="">Blog</Link>
               </li>
               <li className="font-medium text-sm">
-                <Link href="">Contact us</Link>
+                <Link href="/contact">Contact us</Link>
               </li>
             </ul>
           </div>
@@ -70,16 +74,16 @@ export default function Footer() {
             <h2 className="font-bold md:text-base text-sm">EXPLORE</h2>
             <ul className="space-y-4 md:text-sm text-base">
               <li className="font-medium text-sm">
-                <Link href="">Sponsors</Link>
+                <Link href="/sponsor">Sponsors</Link>
               </li>
               <li className="font-medium text-sm">
-                <Link href="">Speakers</Link>
+                <Link href="/speakers">Speakers</Link>
               </li>
               <li className="font-medium text-sm">
-                <Link href="">Gallery</Link>
+                <Link href="/gallery">Gallery</Link>
               </li>
               <li className="font-medium text-sm">
-                <Link href="">Volunteers</Link>
+                <Link href="/volunteers">Volunteers</Link>
               </li>
             </ul>
           </div>
@@ -91,13 +95,13 @@ export default function Footer() {
           Dream, Develop, Dominate.
         </h1>
 
-        <span className="flex text-xs md:text-sm text-neutral-300 flex-row gap-5 items-center">
+        <span className="flex text-xs md:text-sm text-neutral-400 flex-row gap-5 items-center">
           <p>Terms & Conditions</p>
 
           <p>Privacy Policy</p>
         </span>
 
-        <p className="border-t border-t-[#BDD733] text-neutral-300 text-xs w-full flex justify-center p-4">
+        <p className="border-t border-t-[#BDD733] text-neutral-400 text-xs w-full flex justify-center p-4">
           ICEHUB © {new Date().getFullYear()}. All Rights Reserved.
         </p>
       </div>

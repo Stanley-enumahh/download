@@ -48,7 +48,7 @@ export default function Opportunities() {
     <section className="bg-(--navy) py-20 px-6 md:px-16">
       <div className="max-w-6xl mx-auto flex flex-col gap-14 relative">
         {/* glow */}
-        <div className="absolute bg-radial from-[#83CFFF]/15 blur-xl top-[100px] md:-top-10 right-25 to-transparent h-107.5 w-107.5" />
+        <div className="absolute bg-radial from-[#83CFFF]/15 blur-xl top-25 md:-top-10 right-25 to-transparent h-107.5 w-107.5" />
 
         {/* Header */}
         <h2 className="text-[#D3E4FE] text-2xl md:text-5xl font-bold text-center">

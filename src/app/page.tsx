@@ -7,7 +7,7 @@ import NewsLetter from "@/components/Sponsor/NewsLetter";
 
 export default function Home() {
   return (
-    <main>
+    <main style={{ background: "#031632", overflow: "hidden" }}>
       <Hero />
       <AboutUs />
       <Visibility />
