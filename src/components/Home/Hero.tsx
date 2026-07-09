@@ -7,6 +7,38 @@ import { IoLocationSharp } from "react-icons/io5";
 import bars from "@/images/glowBars.png";
 import grid from "@/images/grid.png";
 import Image from "next/image";
+import { motion, type Variants } from "framer-motion";
+
+const slideLeft: Variants = {
+  hidden: {
+    opacity: 0,
+    x: -30,
+  },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.6,
+      ease: [0.16, 1, 0.3, 1],
+    },
+  },
+};
+
+const slideRight: Variants = {
+  hidden: {
+    opacity: 0,
+    x: 30,
+  },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.6,
+      delay: 0.1,
+      ease: [0.16, 1, 0.3, 1],
+    },
+  },
+};
 
 const EVENT_DATE = new Date("2026-09-05T09:00:00");
 
@@ -102,29 +134,41 @@ export default function Hero() {
       </div>
 
       {/* Bottom Info Bar */}
-      <div className="relative z-10 text-(--orange) bg-white/10 flex flex-col md:flex-row items-center justify-between px-12 py-7 gap-4 border-t border-white/10">
+      <div className="relative z-10 flex flex-col items-center justify-between gap-4 border-t border-white/10 bg-white/10 px-12 py-7 text-(--orange) md:flex-row">
         {/* Date */}
-        <div className="flex items-center gap-4">
-          <div className="w-12 h-12 rounded-full flex bg-(--orange) items-center justify-center">
+        <motion.div
+          className="flex items-center gap-4"
+          variants={slideLeft}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.4 }}
+        >
+          <div className="flex h-12 w-12 items-center justify-center rounded-full bg-(--orange)">
             <FiCalendar size={22} className="text-white" />
           </div>
 
           <div>
-            <p className="text-sm text-(--orange) font-light uppercase tracking-widest">
+            <p className="text-(--orange) text-sm font-light uppercase tracking-widest">
               When?
             </p>
-            <p className="text-white font-medium">5th September, 2026</p>
+            <p className="font-medium text-white">5th September, 2026</p>
           </div>
-        </div>
+        </motion.div>
 
         {/* Venue */}
-        <div className="flex items-center gap-4">
-          <p className="text-white font-medium">Classic Munich Hotel, Nnewi</p>
+        <motion.div
+          className="flex items-center gap-4"
+          variants={slideRight}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.4 }}
+        >
+          <p className="font-medium text-white">Classic Munich Hotel, Nnewi</p>
 
-          <div className="w-12 h-12 bg-(--orange) rounded-full flex items-center justify-center">
+          <div className="flex h-12 w-12 items-center justify-center rounded-full bg-(--orange)">
             <IoLocationSharp size={20} className="text-white" />
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
