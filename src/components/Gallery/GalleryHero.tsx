@@ -12,7 +12,7 @@ export default function GalleryHero() {
         <div className="md:w-2/5 flex flex-col gap-4">
           <span className="flex items-center text-[#83CFFF] gap-2 bg-[#83CFFF]/20 border-[#83CFFF33]/80 text-sm font-medium px-4 py-2 rounded-full w-fit">
             <IoRocketOutline size={16} />
-            Startups
+            Gallery
           </span>
 
           <h1 className="text-4xl md:text-5xl font-bold text-[#D3E4FE] leading-tight">

@@ -1,3 +1,4 @@
+import JourneyToStage from "@/components/Startups/JourneyToStage";
 import Opportunities from "@/components/Startups/opportunities";
 import StartUpHero from "@/components/Startups/startUpHero";
 
@@ -6,6 +7,7 @@ export default function Startups() {
     <main style={{ background: "#031632", overflow: "hidden" }}>
       <StartUpHero />
       <Opportunities />
+      <JourneyToStage />
     </main>
   );
 }
