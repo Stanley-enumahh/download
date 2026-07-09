@@ -2,7 +2,7 @@ import startup from "@/images/startup.png";
 import Image from "next/image";
 import { IoRocketOutline } from "react-icons/io5";
 
-export default function StartUpHero() {
+export default function GalleryHero() {
   return (
     <section className="pt-36 pb-24 px-6 md:px-16 relative bg-(--navy)">
       {/* glow */}
