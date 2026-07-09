@@ -19,7 +19,7 @@ export default function Footer() {
         className="absolute top-[45%] md:top-40 right-6"
       />
 
-      <section className="flex flex-col gap-10 md:flex-row justify-between">
+      <section className="flex flex-col gap-16 md:flex-row justify-between">
         <div className="flex flex-col gap-4 max-w-xl">
           <Image src={logo} alt="logo" className="w-40 object-center h-fit" />
 

@@ -42,7 +42,7 @@ export default function JourneyToStage() {
           <h2 className="text-white text-4xl md:text-5xl font-bold leading-tight">
             Journey to the Stage
           </h2>
-          <p className="text-white/50 text-base max-w-xl leading-relaxed">
+          <p className="text-white/80 text-base max-w-xl leading-relaxed">
             Review the application timeline to ensure you don't miss key
             deadlines. Early applicants receive priority review.
           </p>
@@ -68,7 +68,7 @@ export default function JourneyToStage() {
                     <h3 className="text-white text-xl font-bold">
                       {step.title}
                     </h3>
-                    <p className="text-white/50 text-sm leading-relaxed">
+                    <p className="text-white/70 text-sm leading-relaxed">
                       {step.description}
                     </p>
                   </div>

@@ -1,5 +1,7 @@
+import NewsLetter from "@/components/Sponsor/NewsLetter";
 import JourneyToStage from "@/components/Startups/JourneyToStage";
 import Opportunities from "@/components/Startups/opportunities";
+import StartUpCTA from "@/components/Startups/startUpCTA";
 import StartUpHero from "@/components/Startups/startUpHero";
 
 export default function Startups() {
@@ -8,6 +10,8 @@ export default function Startups() {
       <StartUpHero />
       <Opportunities />
       <JourneyToStage />
+      <StartUpCTA />
+      <NewsLetter />
     </main>
   );
 }

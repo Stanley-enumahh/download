@@ -20,7 +20,7 @@ export default function VolunteerCTA() {
         href="https://forms.gle/X4m9kSKw6iNHzbiUA"
         target="_blank"
         rel="noopener noreferrer"
-        className="bg-[#BDD733] flex flex-row gap-3 rounded-lg text-sm font-semibold text-black px-8 py-3 shadow-[3px_6px_0_rgba(244,134,54,1)]"
+        className="bg-[#BDD733] flex items-center flex-row gap-3 rounded-lg text-sm font-semibold text-black px-8 py-3 shadow-[3px_6px_0_rgba(244,134,54,1)]"
       >
         <LuHandHeart /> <p>Be a Volunteer</p>
       </a>
