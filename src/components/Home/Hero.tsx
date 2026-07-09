@@ -92,7 +92,9 @@ export default function Hero() {
 
         {/* CTA */}
         <a
-          href="#tickets"
+          href="https://www.funzweb.com/events/download-tech-event-2026-409"
+          target="_blank"
+          rel="noopener noreferrer"
           className="flex items-center gap-2 bg-(--orange) px-6 md:px-8 py-3 md:py-4 mt-4 rounded-xl text-white font-semibold text-sm md:text-base transition-opacity hover:opacity-90"
         >
           Buy Tickets <HiArrowTrendingUp size={18} />

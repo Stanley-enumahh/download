@@ -1,5 +1,7 @@
 import Image from "next/image";
 import logo from "@/images/Logo.png";
+import star1 from "@/images/Star2.png";
+import star2 from "@/images/Star2.png";
 import { FaXTwitter } from "react-icons/fa6";
 import { SlSocialFacebook } from "react-icons/sl";
 import { IoLogoLinkedin, IoLogoYoutube } from "react-icons/io5";
@@ -7,7 +9,12 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="flex flex-col h-fit bg-(--navy) w-full px-5 md:px-15 pt-8 pb-3 gap-20">
+    <footer className="flex flex-col h-fit bg-(--navy) w-full px-5 md:px-15 pt-8 pb-3 gap-20 relative">
+      {/* stars */}
+
+      <Image src={star1} alt="star" className="absolute bottom-4 left-8" />
+      <Image src={star2} alt="star" className="absolute top-38.5 right-6" />
+
       <section className="flex flex-col gap-10 md:flex-row justify-between">
         <div className="flex flex-col gap-4 max-w-xl">
           <Image src={logo} alt="logo" className="w-40 object-center h-fit" />
