@@ -1,12 +1,12 @@
 import NewsLetter from "@/components/Sponsor/NewsLetter";
 import VolunteerHero from "@/components/Volunteers/volunteerHero";
-import VolunteerHero2 from "@/components/Volunteers/volunteerHero2";
+import VolunteerCTA from "@/components/Volunteers/volunteerCTA";
 
 export default function VolunteerPage() {
   return (
     <main style={{ background: "#031632", overflow: "hidden" }}>
       <VolunteerHero />
-      <VolunteerHero2 />
+      <VolunteerCTA />
       <NewsLetter />
     </main>
   );
