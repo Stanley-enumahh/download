@@ -6,6 +6,7 @@ import { FaXTwitter } from "react-icons/fa6";
 import { SlSocialFacebook } from "react-icons/sl";
 import { IoLogoLinkedin, IoLogoYoutube } from "react-icons/io5";
 import Link from "next/link";
+import { PiTiktokLogo } from "react-icons/pi";
 
 export default function Footer() {
   return (
@@ -32,23 +33,44 @@ export default function Footer() {
 
           <ul className="flex flex-row gap-5">
             <li className="border border-(--orange) cursor-pointer transition-all duration-200 rounded-full p-2 hover:bg-(--orange)">
-              <a href="#">
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href=" https://x.com/DownloadTechE"
+              >
                 <FaXTwitter />
               </a>
             </li>
             <li className="border border-(--orange) cursor-pointer transition-all duration-200 rounded-full p-2 hover:bg-(--orange)">
-              <a href="#">
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.facebook.com/share/18v6ZY6268/"
+              >
                 <SlSocialFacebook />
               </a>
             </li>
             <li className="border border-(--orange) cursor-pointer transition-all duration-200 rounded-full p-2 hover:bg-(--orange)">
-              <a href="#">
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.linkedin.com/company/download-tech-event/"
+              >
                 <IoLogoLinkedin />
               </a>
             </li>
             <li className="border border-(--orange) cursor-pointer transition-all duration-200 rounded-full p-2 hover:bg-(--orange)">
-              <a href="#">
+              <a target="_blank" rel="noopener noreferrer" href="#">
                 <IoLogoYoutube />
+              </a>
+            </li>
+            <li className="border border-(--orange) cursor-pointer transition-all duration-200 rounded-full p-2 hover:bg-(--orange)">
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.tiktok.com/@download.tech.eve?_r=1&_t=ZS-97vPdfjdkF2"
+              >
+                <PiTiktokLogo />
               </a>
             </li>
           </ul>

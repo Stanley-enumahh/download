@@ -39,7 +39,9 @@ export default function StartUpCTA() {
           </p>
 
           <a
-            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://docs.google.com/forms/d/e/1FAIpQLScr0_rG59E_m48mNXW9rmHN8mLSlXJC3Srzih7UJ0SbzNyQUw/viewform"
             className="mt-2 flex items-center gap-2 rounded-lg border bg-[#c8e63c] px-10 py-4 text-sm font-semibold text-[#031632] shadow-[6px_6px_0_rgba(244,134,54,1)] transition-opacity hover:opacity-90"
           >
             <IoRocketSharp size={18} />
