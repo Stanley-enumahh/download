@@ -29,7 +29,7 @@ const items = [
     description:
       "Got a game-changing idea? This is your chance to share it, get noticed, and connect with the right people who can help bring it to life.",
     cta: "Pitch it here",
-    href: "#",
+    href: "https://docs.google.com/forms/d/e/1FAIpQLScr0_rG59E_m48mNXW9rmHN8mLSlXJC3Srzih7UJ0SbzNyQUw/viewform",
   },
 ];
 
