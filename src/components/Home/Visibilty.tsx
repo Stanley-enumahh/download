@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 import visibilityImg from "@/images/visibilty.png";
 import num1 from "@/images/num1.png";
 import num2 from "@/images/num2.png";
@@ -33,12 +36,52 @@ const benefits = [
   },
 ];
 
+const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: { staggerChildren: 0.12 },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] as const },
+  },
+};
+
+const imgVariants = {
+  hidden: { opacity: 0, x: 40 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] as const },
+  },
+};
+
+const headerVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] as const },
+  },
+};
+
 export default function Visibility() {
   return (
     <section className="bg-[#031632] min-h-[115vh] flex items-center py-24 px-6 md:px-16">
       <div className="max-w-6xl mx-auto w-full flex flex-col gap-12">
         {/* Header row */}
-        <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
+        <motion.div
+          className="flex flex-col md:flex-row md:items-start md:justify-between gap-6"
+          variants={headerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.4 }}
+        >
           <div className="flex flex-col gap-3">
             <p className="text-[#F48636] font-semibold text-sm">
               Be at Download
@@ -54,16 +97,25 @@ export default function Visibility() {
           >
             Sponsor
           </Link>
-        </div>
+        </motion.div>
 
         {/* Content row */}
         <div className="flex flex-col md:flex-row gap-12 md:gap-16 items-start">
-          {/* Left: benefits list */}
-          <div className="flex-1 flex flex-col divide-y divide-white">
+          {/* Left: benefits list — staggered */}
+          {/* Left: benefits list — staggered */}
+          <motion.div
+            className="flex-1 flex flex-col divide-y divide-white"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+          >
             {benefits.map((item) => (
-              <div
+              <motion.div
                 key={item.title}
                 className="flex flex-col gap-3 py-7 first:pt-0"
+                variants={itemVariants}
+                // NO initial or whileInView here — parent controls it
               >
                 <div className="flex items-center gap-3">
                   <Image
@@ -78,12 +130,18 @@ export default function Visibility() {
                 <p className="text-white/60 text-sm leading-relaxed">
                   {item.description}
                 </p>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
 
-          {/* Right: image */}
-          <div className="w-full md:w-[45%] shrink-0">
+          {/* Right: image — slides in from right */}
+          <motion.div
+            className="w-full md:w-[45%] shrink-0"
+            variants={imgVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+          >
             <div className="relative rounded-lg overflow-hidden shadow-[3px_6px_0_rgba(200,230,60,1)]">
               <Image
                 src={visibilityImg}
@@ -96,7 +154,7 @@ export default function Visibility() {
                 </span>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

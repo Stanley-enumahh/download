@@ -1,9 +1,12 @@
 "use client";
 
 import { useForm } from "react-hook-form";
+import emailjs from "@emailjs/browser";
+import { useState } from "react";
 import { IoSendSharp } from "react-icons/io5";
 import { IoCallOutline } from "react-icons/io5";
 import { MdOutlineEmail } from "react-icons/md";
+import { EMAILJS_CONFIG } from "@/lib/emailjs";
 
 type FormData = {
   fullName: string;
@@ -12,7 +15,11 @@ type FormData = {
   message: string;
 };
 
+type SubmitStatus = "idle" | "success" | "error";
+
 export default function ContactForm() {
+  const [status, setStatus] = useState<SubmitStatus>("idle");
+
   const {
     register,
     handleSubmit,
@@ -21,9 +28,25 @@ export default function ContactForm() {
   } = useForm<FormData>();
 
   const onSubmit = async (data: FormData) => {
-    console.log(data);
-    // hook up your API here
-    reset();
+    setStatus("idle");
+    try {
+      await emailjs.send(
+        EMAILJS_CONFIG.serviceId,
+        EMAILJS_CONFIG.templateId,
+        {
+          fullName: data.fullName,
+          email: data.email,
+          subject: data.subject,
+          message: data.message,
+        },
+        EMAILJS_CONFIG.publicKey,
+      );
+      setStatus("success");
+      reset();
+    } catch (err) {
+      console.error("EmailJS error:", err);
+      setStatus("error");
+    }
   };
 
   return (
@@ -33,6 +56,7 @@ export default function ContactForm() {
         <p className="text-[#83CFFF] text-sm">GET IN TOUCH WITH US</p>
         <hr className="hidden md:flex w-[35%] border-white/30" />
       </span>
+
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-8 items-center">
         {/* Left: Form */}
         <div className="w-full md:flex-1 bg-white/10 rounded-lg p-4 md:p-8 flex flex-col gap-6">
@@ -59,7 +83,7 @@ export default function ContactForm() {
                     required: "Full name is required",
                   })}
                   placeholder="Enter your full name here"
-                  className="bg-[#FAFAFA33] border border-[#E1E1E1] text-white placeholder:text-white/20 text-sm rounded-lg px-4 py-3 outline-none border border-transparent focus:border-[#F48636] transition-colors"
+                  className="bg-[#FAFAFA33] text-white placeholder:text-white/20 text-sm rounded-lg px-4 py-3 outline-none border border-transparent focus:border-[#F48636] transition-colors"
                 />
                 {errors.fullName && (
                   <p className="text-red-400 text-xs">
@@ -76,7 +100,7 @@ export default function ContactForm() {
                     pattern: { value: /^\S+@\S+$/i, message: "Invalid email" },
                   })}
                   placeholder="your@email.com"
-                  className="bg-[#FAFAFA33] border border-[#E1E1E1] text-white placeholder:text-white/30 text-sm rounded-lg px-4 py-3 outline-none border border-transparent focus:border-[#F48636] transition-colors"
+                  className="bg-[#FAFAFA33] text-white placeholder:text-white/30 text-sm rounded-lg px-4 py-3 outline-none border border-transparent focus:border-[#F48636] transition-colors"
                 />
                 {errors.email && (
                   <p className="text-red-400 text-xs">{errors.email.message}</p>
@@ -90,7 +114,7 @@ export default function ContactForm() {
               <input
                 {...register("subject", { required: "Subject is required" })}
                 placeholder="What is it about?"
-                className="bg-[#FAFAFA33] border border-[#E1E1E1] text-white placeholder:text-white/30 text-sm rounded-lg px-4 py-3 outline-none border border-transparent focus:border-[#F48636] transition-colors"
+                className="bg-[#FAFAFA33] text-white placeholder:text-white/30 text-sm rounded-lg px-4 py-3 outline-none border border-transparent focus:border-[#F48636] transition-colors"
               />
               {errors.subject && (
                 <p className="text-red-400 text-xs">{errors.subject.message}</p>
@@ -104,12 +128,24 @@ export default function ContactForm() {
                 {...register("message", { required: "Message is required" })}
                 placeholder="Tell us more about your question or concern...."
                 rows={5}
-                className="bg-[#FAFAFA33] border border-[#E1E1E1] text-white placeholder:text-white/30 text-sm rounded-lg px-4 py-3 outline-none border border-transparent focus:border-[#F48636] transition-colors resize-none"
+                className="bg-[#FAFAFA33] text-white placeholder:text-white/30 text-sm rounded-lg px-4 py-3 outline-none border border-transparent focus:border-[#F48636] transition-colors resize-none"
               />
               {errors.message && (
                 <p className="text-red-400 text-xs">{errors.message.message}</p>
               )}
             </div>
+
+            {/* Status messages */}
+            {status === "success" && (
+              <p className="text-green-400 text-sm text-center">
+                Message sent! We'll get back to you soon.
+              </p>
+            )}
+            {status === "error" && (
+              <p className="text-red-400 text-sm text-center">
+                Something went wrong. Please try again or contact us directly.
+              </p>
+            )}
 
             {/* Submit */}
             <button
@@ -125,7 +161,6 @@ export default function ContactForm() {
 
         {/* Right: Contact info */}
         <div className="w-full md:w-72 flex flex-col gap-6">
-          {/* Call / WhatsApp */}
           <div className="bg-[#FAFAFA33] rounded-lg p-5 flex flex-col gap-4">
             <div className="flex items-center gap-3">
               <IoCallOutline size={20} className="text-green-400" />
@@ -140,7 +175,6 @@ export default function ContactForm() {
               >
                 +234 7045375814
               </a>
-
               <a
                 href="tel:+2348164568682"
                 className="text-white text-sm hover:text-[#F48636] transition-colors"
@@ -150,7 +184,6 @@ export default function ContactForm() {
             </div>
           </div>
 
-          {/* Email */}
           <div className="bg-[#FAFAFA33] rounded-lg p-4 flex flex-col gap-4">
             <div className="flex items-center gap-3">
               <MdOutlineEmail size={20} className="text-red-400" />
