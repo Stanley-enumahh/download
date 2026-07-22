@@ -53,7 +53,7 @@ export default function GalleryBody() {
         </p>
 
         {/* Masonry grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 auto-rows-[320px] gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-3 auto-rows-[320px] gap-3 md:gap-6">
           {visible.map((img, i) => (
             <div
               key={i}
