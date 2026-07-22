@@ -20,7 +20,7 @@ const items = [
     description:
       "Share your voice, inspire minds, and lead the digital conversation at one of Nigeria's most forward-thinking tech gatherings.",
     cta: "Submit a Pitch",
-    href: "#",
+    href: "https://docs.google.com/forms/d/e/1FAIpQLScr0_rG59E_m48mNXW9rmHN8mLSlXJC3Srzih7UJ0SbzNyQUw/viewform",
   },
   {
     img: startupImg,

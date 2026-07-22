@@ -10,33 +10,20 @@ import Image from "next/image";
 import { motion, type Variants } from "framer-motion";
 
 const slideLeft: Variants = {
-  hidden: {
-    opacity: 0,
-    x: -30,
-  },
+  hidden: { opacity: 0, x: -30 },
   visible: {
     opacity: 1,
     x: 0,
-    transition: {
-      duration: 0.6,
-      ease: [0.16, 1, 0.3, 1],
-    },
+    transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] },
   },
 };
 
 const slideRight: Variants = {
-  hidden: {
-    opacity: 0,
-    x: 30,
-  },
+  hidden: { opacity: 0, x: 30 },
   visible: {
     opacity: 1,
     x: 0,
-    transition: {
-      duration: 0.6,
-      delay: 0.1,
-      ease: [0.16, 1, 0.3, 1],
-    },
+    transition: { duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] },
   },
 };
 
@@ -45,11 +32,7 @@ const EVENT_DATE = new Date("2026-09-05T09:00:00");
 function getTimeLeft() {
   const now = new Date();
   const diff = EVENT_DATE.getTime() - now.getTime();
-
-  if (diff <= 0) {
-    return { days: 0, hours: 0, minutes: 0, seconds: 0 };
-  }
-
+  if (diff <= 0) return { days: 0, hours: 0, minutes: 0, seconds: 0 };
   return {
     days: Math.floor(diff / (1000 * 60 * 60 * 24)),
     hours: Math.floor((diff / (1000 * 60 * 60)) % 24),
@@ -60,8 +43,11 @@ function getTimeLeft() {
 
 function CountdownUnit({ value, label }: { value: number; label: string }) {
   return (
-    <div className="flex flex-col z-10 items-center justify-center font-light border border-white/20 rounded-md w-19.5 md:w-24 h-19.5 md:h-24  backdrop-blur-sm">
-      <span className="text-white text-2xl md:text-4xl font-light">
+    <div className="flex flex-col z-10 items-center justify-center font-light border border-white/20 rounded-md w-19.5 md:w-24 h-19.5 md:h-24 backdrop-blur-sm">
+      <span
+        className="text-white text-2xl md:text-4xl font-light"
+        suppressHydrationWarning
+      >
         {String(value).padStart(2, "0")}
       </span>
       <span className="text-white text-[11px] md:text-xs mt-1 uppercase tracking-widest">
@@ -72,35 +58,40 @@ function CountdownUnit({ value, label }: { value: number; label: string }) {
 }
 
 export default function Hero() {
-  const [timeLeft, setTimeLeft] = useState(getTimeLeft());
+  const [mounted, setMounted] = useState(false);
+  const [timeLeft, setTimeLeft] = useState({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+  });
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      setTimeLeft(getTimeLeft());
-    }, 1000);
-
+    setMounted(true);
+    setTimeLeft(getTimeLeft());
+    const timer = setInterval(() => setTimeLeft(getTimeLeft()), 1000);
     return () => clearInterval(timer);
   }, []);
 
   return (
     <section className="relative min-h-[120vh] bg-(--navy) flex flex-col">
       {/* Grid floor perspective effect */}
-
       <div className="absolute bottom-0 z-0 w-full pointer-events-none">
         <Image
           src={grid}
           alt=""
           className="w-full h-112.5 pointer-events-none"
+          priority
         />
       </div>
 
       {/* glow */}
-
       <div className="absolute top-0 z-0 w-full pointer-events-none">
         <Image
           src={bars}
           alt=""
           className="w-full h-112.5 md:h-130 pointer-events-none"
+          priority
         />
       </div>
 
@@ -116,10 +107,16 @@ export default function Hero() {
 
         {/* Countdown */}
         <div className="flex flex-wrap justify-center gap-3">
-          <CountdownUnit value={timeLeft.days} label="Days" />
-          <CountdownUnit value={timeLeft.hours} label="Hours" />
-          <CountdownUnit value={timeLeft.minutes} label="Minutes" />
-          <CountdownUnit value={timeLeft.seconds} label="Seconds" />
+          <CountdownUnit value={mounted ? timeLeft.days : 0} label="Days" />
+          <CountdownUnit value={mounted ? timeLeft.hours : 0} label="Hours" />
+          <CountdownUnit
+            value={mounted ? timeLeft.minutes : 0}
+            label="Minutes"
+          />
+          <CountdownUnit
+            value={mounted ? timeLeft.seconds : 0}
+            label="Seconds"
+          />
         </div>
 
         {/* CTA */}
@@ -146,7 +143,6 @@ export default function Hero() {
           <div className="flex h-12 w-12 items-center justify-center rounded-full bg-(--orange)">
             <FiCalendar size={22} className="text-white" />
           </div>
-
           <div>
             <p className="text-(--orange) text-sm font-light uppercase tracking-widest">
               When?
@@ -164,7 +160,6 @@ export default function Hero() {
           viewport={{ once: true, amount: 0.4 }}
         >
           <p className="font-medium text-white">Classic Munich Hotel, Nnewi</p>
-
           <div className="flex h-12 w-12 items-center justify-center rounded-full bg-(--orange)">
             <IoLocationSharp size={20} className="text-white" />
           </div>
