@@ -7,6 +7,7 @@ import { IoSendSharp } from "react-icons/io5";
 import { IoCallOutline } from "react-icons/io5";
 import { MdOutlineEmail } from "react-icons/md";
 import { EMAILJS_CONFIG } from "@/lib/emailjs";
+import { motion } from "framer-motion";
 
 type FormData = {
   fullName: string;
@@ -51,15 +52,33 @@ export default function ContactForm() {
 
   return (
     <section className="bg-(--navy) py-20 px-6 md:px-16 flex flex-col gap-6 items-center">
-      <span className="flex items-center w-[80%] gap-5 justify-center">
+      <motion.span
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{
+          duration: 0.6,
+          ease: [0.16, 1, 0.3, 1],
+        }}
+        className="flex items-center w-[80%] gap-5 justify-center"
+      >
         <hr className="hidden md:flex w-[35%] border-white/30" />
         <p className="text-[#83CFFF] text-sm">GET IN TOUCH WITH US</p>
         <hr className="hidden md:flex w-[35%] border-white/30" />
-      </span>
+      </motion.span>
 
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-8 items-center">
         {/* Left: Form */}
-        <div className="w-full md:flex-1 bg-white/10 rounded-lg p-4 md:p-8 flex flex-col gap-6">
+        <motion.div
+          initial={{ opacity: 0, x: -40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{
+            duration: 0.7,
+            ease: [0.16, 1, 0.3, 1],
+          }}
+          className="w-full md:flex-1 bg-white/10 rounded-lg p-4 md:p-8 flex flex-col gap-6"
+        >
           <div className="flex flex-col gap-2">
             <h2 className="text-[#F48636] text-xl font-bold">
               Send us a message
@@ -157,11 +176,25 @@ export default function ContactForm() {
               {isSubmitting ? "Sending..." : "Send Message"}
             </button>
           </form>
-        </div>
+        </motion.div>
 
         {/* Right: Contact info */}
-        <div className="w-full md:w-72 flex flex-col gap-6">
-          <div className="bg-[#FAFAFA33] rounded-lg p-5 flex flex-col gap-4">
+        <motion.div
+          initial={{ opacity: 0, x: 40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{
+            duration: 0.7,
+            delay: 0.15,
+            ease: [0.16, 1, 0.3, 1],
+          }}
+          className="w-full md:w-72 flex flex-col gap-6"
+        >
+          <motion.div
+            whileHover={{ y: -5 }}
+            transition={{ duration: 0.25 }}
+            className="bg-[#FAFAFA33] rounded-lg p-5 flex flex-col gap-4"
+          >
             <div className="flex items-center gap-3">
               <IoCallOutline size={20} className="text-green-400" />
               <h3 className="text-[#F48636] font-bold text-base">
@@ -182,9 +215,13 @@ export default function ContactForm() {
                 +234 8164568682
               </a>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="bg-[#FAFAFA33] rounded-lg p-4 flex flex-col gap-4">
+          <motion.div
+            whileHover={{ y: -5 }}
+            transition={{ duration: 0.25 }}
+            className="bg-[#FAFAFA33] rounded-lg p-5 flex flex-col gap-4"
+          >
             <div className="flex items-center gap-3">
               <MdOutlineEmail size={20} className="text-red-400" />
               <h3 className="text-[#F48636] font-bold text-base">Email Us</h3>
@@ -195,8 +232,8 @@ export default function ContactForm() {
             >
               downloadtechevent@gmail.com
             </a>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );

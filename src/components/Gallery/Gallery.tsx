@@ -35,7 +35,7 @@ const images: GalleryImage[] = [
   { src: g9, alt: "Workshop session", span: "normal" },
   { src: g10, alt: "Award ceremony", span: "wide" },
   { src: g11, alt: "Speakers on stage", span: "normal" },
-  { src: g12, alt: "Volunteers group photo", span: "normal" },
+  { src: g12, alt: "Volunteers group photo", span: "wide" },
 ];
 
 const INITIAL_COUNT = 7;
@@ -79,7 +79,7 @@ export default function GalleryBody() {
           <div className="flex justify-center">
             <button
               onClick={() => setShowAll(true)}
-              className="border border-[#c8e63c] text-[#c8e63c] hover:bg-[#c8e63c] hover:text-[#031632] transition-colors font-semibold px-10 py-3 rounded-full text-sm"
+              className="shadow-[0_0_20px_rgba(200,230,60,0.35)] text-[#c8e63c] duration-200 hover:bg-[#c8e63c] hover:text-[#031632] cursor-pointer transition-colors font-semibold px-10 py-3 rounded-full text-sm"
             >
               LOAD MORE MOMENTS
             </button>

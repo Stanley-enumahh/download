@@ -12,7 +12,7 @@ export default function TicketHero() {
         {/* Partnership badge */}
         <div className="flex items-center gap-3">
           <Image src={logo} alt="Download" className="h-8 w-auto" />
-          <span className="border border-[#83CFFF33] bg-[#83CFFF1A] text-white/70 text-sm px-4 py-1.5 rounded-lg">
+          <span className="border border-[#83CFFF33] bg-[#83CFFF1A] text-white/70 text-xs md:text-sm px-4 py-1.5 rounded-lg">
             In Partnership with
           </span>
           <Image src={neddi} alt="NEDDI" className="h-8 w-auto" />

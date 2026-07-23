@@ -1,38 +1,82 @@
+"use client";
+
+import { motion } from "framer-motion";
 import { LuHandHelping } from "react-icons/lu";
-import contact from "@/images/contact.png";
 import Image from "next/image";
+import contact from "@/images/contact.png";
 
 export default function ContactHero() {
   return (
-    <section className=" pt-36 pb-24 px-6 md:px-16 relative">
-      {/* glow */}
-      <div className="absolute bg-radial from-[#83CFFF]/15 blur-xl -top-40 left-75  to-transparent h-107.5 w-107.5"></div>
-      <div className="max-w-7xl gap-6 md:justify-between mx-auto flex flex-col md:flex-row items-center z-10">
-        {/* Left: text */}
-        <div className="md:w-2/5 flex flex-col gap-4">
-          <span className="flex items-center text-[#83CFFF] gap-2 bg-[#83CFFF]/20 border-[#83CFFF33]/80 text-sm font-medium px-4 py-2 rounded-full w-fit">
+    <section className="relative overflow-hidden px-6 pt-36 pb-24 md:px-16">
+      {/* Animated glow */}
+      <div className="absolute left-75 -top-40 h-[430px] w-[430px] rounded-full bg-radial from-[#83CFFF]/15 to-transparent blur-xl" />
+
+      <div className="relative z-10 mx-auto flex max-w-7xl flex-col items-center gap-6 md:flex-row md:justify-between">
+        {/* Left */}
+        <div className="flex flex-col gap-4 md:w-2/5">
+          <motion.span
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 0.6,
+              ease: "easeOut",
+            }}
+            className="flex w-fit items-center gap-2 rounded-full border border-[#83CFFF33]/80 bg-[#83CFFF]/20 px-4 py-2 text-sm font-medium text-[#83CFFF]"
+          >
             <LuHandHelping size={16} />
             Get in Touch with us
-          </span>
+          </motion.span>
 
-          <h1 className="text-4xl md:text-5xl font-bold text-[#D3E4FE leading-tight">
-            Contact the <br /> Download Tech <br /> Event Team
-          </h1>
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 0.6,
+              delay: 0.15,
+              ease: "easeOut",
+            }}
+            className="text-4xl font-bold leading-tight text-[#D3E4FE] md:text-5xl"
+          >
+            Contact the
+            <br />
+            Download Tech
+            <br />
+            Event Team
+          </motion.h1>
 
-          <p className="text-[#C5C6CE] text-base leading-relaxed max-w-sm">
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 0.6,
+              delay: 0.3,
+              ease: "easeOut",
+            }}
+            className="max-w-sm text-base leading-relaxed text-[#C5C6CE]"
+          >
             Connect with the Download Tech Event team and get the information,
             support, or partnership opportunities you need.
-          </p>
+          </motion.p>
         </div>
 
-        {/* Right: image placeholder */}
-        <div className="flex-1 w-full">
+        {/* Right */}
+        <motion.div
+          initial={{ opacity: 0, x: 40, scale: 0.96 }}
+          animate={{ opacity: 1, x: 0, scale: 1 }}
+          transition={{
+            duration: 0.8,
+            delay: 0.2,
+            ease: "easeOut",
+          }}
+          className="w-full flex-1"
+        >
           <Image
             src={contact}
-            alt="contact hero image"
-            className="w-full aspect-video"
+            alt="Contact hero image"
+            priority
+            className="aspect-video w-full"
           />
-        </div>
+        </motion.div>
       </div>
     </section>
   );

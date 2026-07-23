@@ -1,4 +1,4 @@
-import startup from "@/images/startup.png";
+import gHero from "@/images/gallery/g1.webp";
 import Image from "next/image";
 import { IoRocketOutline } from "react-icons/io5";
 
@@ -27,13 +27,11 @@ export default function GalleryHero() {
 
         {/* Right: image placeholder */}
         <div className="flex-1 w-full">
-          {/* <Image
-            src={startup}
-            alt="Start-up hero image"
-            className="w-full aspect-video"
-          /> */}
-
-          <div className="w-full aspect-video bg-[#0D55BE]"></div>
+          <Image
+            src={gHero}
+            alt="Gallery hero image"
+            className="w-full aspect-video h-full object-cover"
+          />
         </div>
       </div>
     </section>
