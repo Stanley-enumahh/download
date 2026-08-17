@@ -107,11 +107,11 @@ export default function PreviousSpeakers() {
         {/* Header */}
         <div className="flex flex-col items-center text-center gap-4">
           <span className="bg-[#83CFFF1A] text-[#83CFFF] text-xs font-semibold uppercase tracking-widest px-3 py-2 rounded-md">
-            See Our Previous Speakers
+            See Our Amazing Speakers
           </span>
           <p className="text-white/50 text-base max-w-3xl leading-relaxed">
-            Discover the visionaries, engineers, and creatives defining the next
-            era of enterprise technology. Download Tech 2026 brings together the
+            Discover the visionaries, engineers, and creatives defining the era
+            of enterprise technology. Download Tech 2026 brings together the
             brightest minds shaping our digital future.
           </p>
         </div>
