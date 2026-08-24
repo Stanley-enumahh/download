@@ -46,14 +46,12 @@ const otherSpeakers = [
     topic: "Cybersecurity",
     name: "Cynthia Orife",
     role: "Data/Cybersecurity Analyst",
-    company: "",
   },
   {
     img: ndubisi,
     topic: "Engineering",
     name: "Engr. Dr. Ndubisi Okoli",
     role: "Speaker",
-    company: "",
   },
   {
     img: martha,
@@ -152,12 +150,10 @@ export default function PreviousSpeakers() {
                   </h3>
                   <p className="text-[#B6C7EB] text-sm">{speaker.role}</p>
 
-                  {speaker.company && (
-                    <p className="flex items-center gap-2 text-[#C5C6CE] text-sm">
-                      <BsBuilding size={13} />
-                      {speaker.company}
-                    </p>
-                  )}
+                  <p className="flex items-center gap-2 text-[#C5C6CE] text-sm">
+                    <BsBuilding size={13} />
+                    {speaker.company}
+                  </p>
                 </div>
               </motion.div>
             ))}
@@ -202,9 +198,13 @@ export default function PreviousSpeakers() {
                     sizes="56px"
                   />
                 </div>
-                <span className="bg-[#020F22] text-white/60 text-xs px-3 py-1 rounded-sm w-fit">
-                  {speaker.topic}
-                </span>
+
+                {speaker.topic && (
+                  <span className="bg-[#020F22] text-white/60 text-xs px-3 py-1 rounded-sm w-fit">
+                    {speaker.topic}
+                  </span>
+                )}
+
                 <div className="flex flex-col gap-1">
                   <h4 className="text-white font-semibold text-base">
                     {speaker.name}
