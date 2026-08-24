@@ -151,10 +151,13 @@ export default function PreviousSpeakers() {
                     {speaker.name}
                   </h3>
                   <p className="text-[#B6C7EB] text-sm">{speaker.role}</p>
-                  <p className="flex items-center gap-2 text-[#C5C6CE] text-sm">
-                    <BsBuilding size={13} />
-                    {speaker.company}
-                  </p>
+
+                  {speaker.company && (
+                    <p className="flex items-center gap-2 text-[#C5C6CE] text-sm">
+                      <BsBuilding size={13} />
+                      {speaker.company}
+                    </p>
+                  )}
                 </div>
               </motion.div>
             ))}
