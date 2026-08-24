@@ -13,21 +13,6 @@ import martha from "@/images/speakers/Martha_Chidimma_Egenti.webp";
 
 const keynotes = [
   {
-    img: ifedy,
-    name: "Ifedy Ralph Eze",
-    role: "CEO/MD, Founder Institute",
-    company: "Co-Founder, IDEA Africa",
-  },
-  {
-    img: fayo,
-    name: "Fayo Williams",
-    role: "Founder & Managing Consultant",
-    company: "Simply Exponential Consult Ltd.",
-  },
-];
-
-const otherSpeakers = [
-  {
     img: kehinde,
     topic: "ICT & Infrastructure",
     name: "Dr. (Mrs.) Kehinde Samuel-Ajakaiye",
@@ -40,6 +25,21 @@ const otherSpeakers = [
     name: "Dr. Chibueze Ofobuike",
     role: "Mayor, Aguata L.G.A.",
     company: "APGA Candidate, House of Representatives",
+  },
+];
+
+const otherSpeakers = [
+  {
+    img: ifedy,
+    name: "Ifedy Ralph Eze",
+    role: "CEO/MD, Founder Institute",
+    company: "Co-Founder, IDEA Africa",
+  },
+  {
+    img: fayo,
+    name: "Fayo Williams",
+    role: "Founder & Managing Consultant",
+    company: "Simply Exponential Consult Ltd.",
   },
   {
     img: cynthia,
