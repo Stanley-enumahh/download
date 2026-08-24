@@ -2,7 +2,7 @@ import sharp from "sharp";
 import { readdirSync } from "fs";
 import { join } from "path";
 
-const INPUT = "./public/images/gallery/original";
+const INPUT = "./public/images/speakers/original";
 const OUTPUT = "./public/images/gallery";
 
 readdirSync(INPUT).forEach(async (file) => {

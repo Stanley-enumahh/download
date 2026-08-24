@@ -1,111 +1,106 @@
+"use client";
+
 import Image from "next/image";
 import { BsBuilding } from "react-icons/bs";
-import amina from "@/images/speakers/anima.png";
-import samuel from "@/images/speakers/samuel.png";
-import sarah from "@/images/speakers/sarah.png";
-
-// const keynotes = [
-//   {
-//     img: amina,
-//     tag: "OPENING KEYNOTE",
-//     name: "Dr. Amina Diallo",
-//     role: "Chief AI Scientist",
-//     company: "FutureScale Solutions",
-//   },
-//   {
-//     img: samuel,
-//     tag: "CLOSING KEYNOTE",
-//     name: "Samuel Osei",
-//     role: "Founder & CEO",
-//     company: "Nexus Finance",
-//   },
-// ];
-
-// const otherSpeakers = [
-//   {
-//     img: sarah,
-//     topic: "AI & ML",
-//     name: "Sarah Mensah",
-//     role: "Lead Machine Learning Engineer",
-//     company: "DataBricks Africa",
-//   },
-//   {
-//     img: sarah,
-//     topic: "Design Systems",
-//     name: "David Okafor",
-//     role: "Head of Product Design",
-//     company: "Stripe",
-//   },
-//   {
-//     img: sarah,
-//     topic: "Product Strategy",
-//     name: "Nneka Uzo",
-//     role: "VP of Product",
-//     company: "Spotify",
-//   },
-//   {
-//     img: sarah,
-//     topic: "Fintech",
-//     name: "Kwame Mensah",
-//     role: "Co-Founder",
-//     company: "PayStack",
-//   },
-// ];
+import { motion } from "framer-motion";
+import kehinde from "@/images/speakers/Dr_Kehinde.webp";
+import chibueze from "@/images/speakers/Dr_Chibueze_Ofobuike.webp";
+import cynthia from "@/images/speakers/Cynthia_Orife.webp";
+import ndubisi from "@/images/speakers/Engr_Ndubisi_Okoli.webp";
+import fayo from "@/images/speakers/Fayo_Williams.webp";
+import ifedy from "@/images/speakers/Ifedy_Ralph_Eze.webp";
+import martha from "@/images/speakers/Martha_Chidimma_Egenti.webp";
 
 const keynotes = [
   {
-    img: amina,
+    img: ifedy,
     tag: "OPENING KEYNOTE",
-    name: "Guess Who?",
-    role: "Speaker to be announced",
-    company: "Coming Soon",
+    name: "Ifedy Ralph Eze",
+    role: "CEO/MD, Founder Institute",
+    company: "Co-Founder, IDEA Africa",
   },
   {
-    img: samuel,
+    img: fayo,
     tag: "CLOSING KEYNOTE",
-    name: "Guess Who?",
-    role: "Speaker to be announced",
-    company: "Coming Soon",
+    name: "Fayo Williams",
+    role: "Founder & Managing Consultant",
+    company: "Simply Exponential Consult Ltd.",
   },
 ];
 
 const otherSpeakers = [
   {
-    img: sarah,
-    topic: "Coming Soon",
-    name: "Guess Who?",
-    role: "Speaker to be announced",
-    company: "To Be Revealed",
+    img: kehinde,
+    topic: "ICT & Infrastructure",
+    name: "Dr. (Mrs.) Kehinde Samuel-Ajakaiye",
+    role: "Programme Analyst, Head of ICT",
+    company: "NASENI",
   },
   {
-    img: sarah,
-    topic: "Coming Soon",
-    name: "Guess Who?",
-    role: "Speaker to be announced",
-    company: "To Be Revealed",
+    img: chibueze,
+    topic: "Governance & Tech",
+    name: "Dr. Chibueze Ofobuike",
+    role: "Mayor, Aguata L.G.A.",
+    company: "APGA Candidate, House of Representatives",
   },
   {
-    img: sarah,
-    topic: "Coming Soon",
-    name: "Guess Who?",
-    role: "Speaker to be announced",
-    company: "To Be Revealed",
+    img: cynthia,
+    topic: "Cybersecurity",
+    name: "Cynthia Orife",
+    role: "Data/Cybersecurity Analyst",
+    company: "",
   },
   {
-    img: sarah,
-    topic: "Coming Soon",
-    name: "Guess Who?",
-    role: "Speaker to be announced",
-    company: "To Be Revealed",
+    img: ndubisi,
+    topic: "Engineering",
+    name: "Engr. Dr. Ndubisi Okoli",
+    role: "Speaker",
+    company: "",
+  },
+  {
+    img: martha,
+    topic: "Education & Tech",
+    name: "Prof. Martha C. Egenti",
+    role: "Director, Awka Window on America",
+    company: "Nnamdi Azikiwe University",
   },
 ];
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 24 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.55, ease: [0.16, 1, 0.3, 1] as const },
+  },
+};
+
+const staggerGrid = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.1 } },
+};
+
+const cardFade = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] as const },
+  },
+};
 
 export default function PreviousSpeakers() {
   return (
     <section className="bg-[#031632] py-20 px-6 md:px-16">
       <div className="max-w-6xl mx-auto flex flex-col gap-14">
         {/* Header */}
-        <div className="flex flex-col items-center text-center gap-4">
+        <motion.div
+          className="flex flex-col items-center text-center gap-4"
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }}
+        >
           <span className="bg-[#83CFFF1A] text-[#83CFFF] text-xs font-semibold uppercase tracking-widest px-3 py-2 rounded-md">
             See Our Amazing Speakers
           </span>
@@ -114,34 +109,45 @@ export default function PreviousSpeakers() {
             of enterprise technology. Download Tech 2026 brings together the
             brightest minds shaping our digital future.
           </p>
-        </div>
+        </motion.div>
 
         {/* Keynote visionaries */}
         <div className="flex flex-col gap-8">
-          <span className="flex items-center w-full gap-5 justify-center">
+          <motion.span
+            className="flex items-center w-full gap-5 justify-center"
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.5 }}
+          >
             <hr className="w-[40%] border-white/10" />
-            <p className="text-center text-[#83CFFF] text-xs font-semibold uppercase tracking-widest">
+            <p className="text-center text-[#83CFFF] text-xs font-semibold uppercase tracking-widest whitespace-nowrap">
               Keynote Visionaries
             </p>
             <hr className="w-[40%] border-white/10" />
-          </span>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          </motion.span>
+
+          <motion.div
+            className="grid grid-cols-1 md:grid-cols-2 gap-6"
+            variants={staggerGrid}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+          >
             {keynotes.map((speaker) => (
-              <div
-                key={speaker.name}
+              <motion.div
+                key={speaker.tag}
                 className="relative rounded-lg border border-white/3 overflow-hidden h-80 md:h-115 bg-[#0d2140]"
+                variants={cardFade}
               >
-                {/*  image */}
-
-                <div className="absolute inset-0 bg-linear-to-br from-[#0E2A4F] via-[#123764] to-[#0B1F3A] flex items-center justify-center">
-                  <span className="text-white/15 text-3xl md:text-5xl font-bold uppercase tracking-[0.3em]">
-                    Guess Who?
-                  </span>
-                </div>
-                {/* Gradient overlay */}
-                <div className="absolute inset-0 bg-linear-to-t from-[#031632]/80 via-[#031632]/40 to-transparent" />
-
-                {/* Content */}
+                <Image
+                  src={speaker.img}
+                  alt={speaker.tag}
+                  fill
+                  className="object-cover object-top"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+                <div className="absolute inset-0 bg-linear-to-t from-[#031632]/60 via-[#031632]/20 to-transparent" />
                 <div className="absolute bottom-0 left-0 p-4 md:p-6 flex flex-col gap-2">
                   <span className="border border-[#83CFFF4D] flex items-center gap-2 bg-[#0d2140]/80 backdrop-blur-sm text-[#83CFFF] text-xs font-semibold uppercase tracking-widest px-3 py-1.5 rounded-full w-fit">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#83CFFF]" />
@@ -156,38 +162,52 @@ export default function PreviousSpeakers() {
                     {speaker.company}
                   </p>
                 </div>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
 
-        {/* Other speakers */}
+        {/* Other Speakers */}
         <div className="flex flex-col gap-8">
-          <span className="flex items-center w-full gap-5 justify-center">
+          <motion.span
+            className="flex items-center w-full gap-5 justify-center"
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.5 }}
+          >
             <hr className="w-[40%] border-white/10" />
-            <p className="text-center text-[#83CFFF] text-xs font-semibold uppercase tracking-widest">
+            <p className="text-center text-[#83CFFF] text-xs font-semibold uppercase tracking-widest whitespace-nowrap">
               Other Speakers
             </p>
             <hr className="w-[40%] border-white/10" />
-          </span>
+          </motion.span>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
+          <motion.div
+            className="grid grid-cols-2 md:grid-cols-4 gap-5"
+            variants={staggerGrid}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.15 }}
+          >
             {otherSpeakers.map((speaker) => (
-              <div
+              <motion.div
                 key={speaker.name}
                 className="bg-[#0a1e35] rounded-xl p-3 md:p-7 border border-white/10 backdrop-blur-md flex flex-col gap-4"
+                variants={cardFade}
               >
-                {/* Avatar */}
-                <div className="w-14 h-14 rounded-full border-2 border-[#1a3a5c] bg-[#102A47] flex items-center justify-center">
-                  <span className="text-[#83CFFF] text-xs font-bold">?</span>
+                <div className="relative w-20 h-20 rounded-full overflow-hidden border-2 border-[#1a3a5c] shrink-0">
+                  <Image
+                    src={speaker.img}
+                    alt={speaker.name}
+                    fill
+                    className="object-cover object-top"
+                    sizes="56px"
+                  />
                 </div>
-
-                {/* Topic tag */}
                 <span className="bg-[#020F22] text-white/60 text-xs px-3 py-1 rounded-sm w-fit">
                   {speaker.topic}
                 </span>
-
-                {/* Info */}
                 <div className="flex flex-col gap-1">
                   <h4 className="text-white font-semibold text-base">
                     {speaker.name}
@@ -195,9 +215,9 @@ export default function PreviousSpeakers() {
                   <p className="text-white/50 text-xs">{speaker.role}</p>
                   <p className="text-white/70 text-xs">{speaker.company}</p>
                 </div>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
