@@ -14,14 +14,12 @@ import martha from "@/images/speakers/Martha_Chidimma_Egenti.webp";
 const keynotes = [
   {
     img: ifedy,
-    tag: "OPENING KEYNOTE",
     name: "Ifedy Ralph Eze",
     role: "CEO/MD, Founder Institute",
     company: "Co-Founder, IDEA Africa",
   },
   {
     img: fayo,
-    tag: "CLOSING KEYNOTE",
     name: "Fayo Williams",
     role: "Founder & Managing Consultant",
     company: "Simply Exponential Consult Ltd.",
@@ -136,23 +134,19 @@ export default function PreviousSpeakers() {
           >
             {keynotes.map((speaker) => (
               <motion.div
-                key={speaker.tag}
+                key={speaker.name}
                 className="relative rounded-lg border border-white/3 overflow-hidden h-80 md:h-115 bg-[#0d2140]"
                 variants={cardFade}
               >
                 <Image
                   src={speaker.img}
-                  alt={speaker.tag}
+                  alt={speaker.name}
                   fill
                   className="object-cover object-top"
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
                 <div className="absolute inset-0 bg-linear-to-t from-[#031632]/60 via-[#031632]/20 to-transparent" />
                 <div className="absolute bottom-0 left-0 p-4 md:p-6 flex flex-col gap-2">
-                  <span className="border border-[#83CFFF4D] flex items-center gap-2 bg-[#0d2140]/80 backdrop-blur-sm text-[#83CFFF] text-xs font-semibold uppercase tracking-widest px-3 py-1.5 rounded-full w-fit">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#83CFFF]" />
-                    {speaker.tag}
-                  </span>
                   <h3 className="text-white text-2xl md:text-4xl font-bold leading-tight">
                     {speaker.name}
                   </h3>
