@@ -10,6 +10,7 @@ import ndubisi from "@/images/speakers/Engr_Ndubisi_Okoli.webp";
 import fayo from "@/images/speakers/Fayo_Williams.webp";
 import ifedy from "@/images/speakers/Ifedy_Ralph_Eze.webp";
 import martha from "@/images/speakers/Martha_Chidimma_Egenti.webp";
+import Chisom from "@/images/speakers/Mr_God’swill_Chisom.webp";
 
 const keynotes = [
   {
@@ -59,6 +60,13 @@ const otherSpeakers = [
     name: "Prof. Martha C. Egenti",
     role: "Director, Awka Window on America",
     company: "Nnamdi Azikiwe University",
+  },
+  {
+    img: Chisom,
+    topic: "Data Science",
+    name: "Mr Chisom Godwill",
+    role: "Epidemiologist and Data Scientist.",
+    company: "Public health",
   },
 ];
 
