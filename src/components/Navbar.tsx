@@ -103,6 +103,7 @@ export default function Navbar() {
           </ul>
           <Link
             href="/tickets"
+            onClick={() => setExploreOpen(false)}
             className="flex items-center gap-2 bg-(--orange) px-4 py-2.5 rounded-lg text-white font-semibold text-sm transition-opacity hover:opacity-90 whitespace-nowrap shrink-0"
           >
             See Tickets <HiArrowTrendingUp size={16} />
