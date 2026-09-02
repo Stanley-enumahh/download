@@ -2,10 +2,40 @@
 
 import { IoRocketOutline } from "react-icons/io5";
 import { motion } from "framer-motion";
+import { useEffect, useRef } from "react";
 
 const YOUTUBE_VIDEO_ID = "eWJpdT7mbAY";
 
 export default function GalleryHero() {
+  const iframeRef = useRef<HTMLIFrameElement>(null);
+
+  useEffect(() => {
+    const iframe = iframeRef.current;
+    if (!iframe) return;
+
+    const postCommand = (func: "playVideo" | "pauseVideo") => {
+      iframe.contentWindow?.postMessage(
+        JSON.stringify({ event: "command", func, args: [] }),
+        "*",
+      );
+    };
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          postCommand("playVideo");
+        } else {
+          postCommand("pauseVideo");
+        }
+      },
+      { threshold: 0.25 },
+    );
+
+    observer.observe(iframe);
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section className="pt-36 pb-24 px-6 md:px-16 relative bg-(--navy) overflow-hidden">
       {/* glow */}
@@ -40,8 +70,9 @@ export default function GalleryHero() {
           className="aspect-video w-full flex-1 overflow-hidden rounded-lg"
         >
           <iframe
-            src={`https://www.youtube-nocookie.com/embed/${YOUTUBE_VIDEO_ID}?autoplay=1&loop=1&playlist=${YOUTUBE_VIDEO_ID}&controls=0&modestbranding=1&rel=0&playsinline=1`}
-            title="Gallery hero video"
+            ref={iframeRef}
+            src={`https://www.youtube-nocookie.com/embed/${YOUTUBE_VIDEO_ID}?autoplay=1&loop=1&playlist=${YOUTUBE_VIDEO_ID}&controls=0&modestbranding=1&rel=0&playsinline=1&enablejsapi=1`}
+            title="Contact hero video"
             referrerPolicy="strict-origin-when-cross-origin"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
