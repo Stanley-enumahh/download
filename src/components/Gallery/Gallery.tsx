@@ -53,14 +53,14 @@ export default function GalleryBody() {
         </p>
 
         {/* Masonry grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 auto-rows-[320px] gap-3 md:gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 auto-rows-[320px] gap-3 md:gap-6">
           {visible.map((img, i) => (
             <div
               key={i}
               className={`relative overflow-hidden rounded-lg
-                ${img.span === "wide" ? "col-span-2" : ""}
-                ${img.span === "tall" ? "row-span-2" : ""}
-              `}
+        ${img.span === "wide" ? "md:col-span-2" : ""}
+        ${img.span === "tall" ? "md:row-span-2" : ""}
+      `}
             >
               <Image
                 src={img.src}
