@@ -14,7 +14,7 @@ const items = [
     description:
       "Put your innovation in the spotlight where tech meets opportunity — connect, demo, and grow at Nigeria's boldest digital stage.",
     cta: "Learn More",
-    href: "#",
+    href: "https://forms.gle/X4m9kSKw6iNHzbiUA",
   },
   {
     img: speakingImg,
@@ -28,7 +28,7 @@ const items = [
   {
     img: startupImg,
     imgLeft: true,
-    title: "Do you have an Innovative Start?",
+    title: "Do you have an Innovative Start Up?",
     description:
       "Got a game-changing idea? This is your chance to share it, get noticed, and connect with the right people who can help bring it to life.",
     cta: "Pitch it here",

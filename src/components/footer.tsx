@@ -38,7 +38,7 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 href=" https://x.com/DownloadTechE"
               >
-                <FaXTwitter />
+                <FaXTwitter className="text-white" />
               </a>
             </li>
             <li className="border border-(--orange) cursor-pointer transition-all duration-200 rounded-full p-2 hover:bg-(--orange)">
@@ -47,7 +47,7 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 href="https://www.facebook.com/share/18v6ZY6268/"
               >
-                <SlSocialFacebook />
+                <SlSocialFacebook className="text-white" />
               </a>
             </li>
             <li className="border border-(--orange) cursor-pointer transition-all duration-200 rounded-full p-2 hover:bg-(--orange)">
@@ -56,12 +56,12 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 href="https://www.linkedin.com/company/download-tech-event/"
               >
-                <IoLogoLinkedin />
+                <IoLogoLinkedin className="text-white" />
               </a>
             </li>
             <li className="border border-(--orange) cursor-pointer transition-all duration-200 rounded-full p-2 hover:bg-(--orange)">
               <a target="_blank" rel="noopener noreferrer" href="#">
-                <IoLogoYoutube />
+                <IoLogoYoutube className="text-white" />
               </a>
             </li>
             <li className="border border-(--orange) cursor-pointer transition-all duration-200 rounded-full p-2 hover:bg-(--orange)">
@@ -70,7 +70,7 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 href="https://www.tiktok.com/@download.tech.eve?_r=1&_t=ZS-97vPdfjdkF2"
               >
-                <PiTiktokLogo />
+                <PiTiktokLogo className="text-white" />
               </a>
             </li>
           </ul>
@@ -78,33 +78,37 @@ export default function Footer() {
 
         <div className="flex flex-row gap-16">
           <div className="space-y-4">
-            <h2 className="font-bold md:text-base text-sm">EXPLORE</h2>
+            <h2 className="font-bold md:text-base text-sm text-white">
+              EXPLORE
+            </h2>
             <ul className="space-y-4 md:text-sm text-base">
-              <li className="font-medium text-sm">
+              <li className="font-medium text-sm text-neutral-200">
                 <Link href="/">About us</Link>
               </li>
-              <li className="font-medium text-sm">
+              <li className="font-medium text-sm text-neutral-200">
                 <Link href="">Blog</Link>
               </li>
-              <li className="font-medium text-sm">
+              <li className="font-medium text-sm text-neutral-200">
                 <Link href="/contact">Contact us</Link>
               </li>
             </ul>
           </div>
 
           <div className="space-y-4">
-            <h2 className="font-bold md:text-base text-sm">EXPLORE</h2>
+            <h2 className="font-bold md:text-base text-sm text-white">
+              EXPLORE
+            </h2>
             <ul className="space-y-4 md:text-sm text-base">
-              <li className="font-medium text-sm">
+              <li className="font-medium text-sm text-neutral-200">
                 <Link href="/sponsor">Sponsors</Link>
               </li>
-              <li className="font-medium text-sm">
+              <li className="font-medium text-sm text-neutral-200">
                 <Link href="/speakers">Speakers</Link>
               </li>
-              <li className="font-medium text-sm">
+              <li className="font-medium text-sm text-neutral-200">
                 <Link href="/gallery">Gallery</Link>
               </li>
-              <li className="font-medium text-sm">
+              <li className="font-medium text-sm text-neutral-200">
                 <Link href="/volunteers">Volunteers</Link>
               </li>
             </ul>
@@ -113,7 +117,7 @@ export default function Footer() {
       </section>
 
       <div className="w-full flex justify-center font-jakarta font-medium flex-col items-center gap-4 md:gap-8">
-        <h1 className="font-jakarta text-xl md:text-4xl font-bold">
+        <h1 className="font-jakarta text-white text-xl md:text-4xl font-bold">
           Dream, Develop, Dominate.
         </h1>
 

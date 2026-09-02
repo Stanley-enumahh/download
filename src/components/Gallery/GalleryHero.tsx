@@ -1,6 +1,9 @@
-import gHero from "@/images/gallery/g1.webp";
-import Image from "next/image";
+"use client";
+
 import { IoRocketOutline } from "react-icons/io5";
+import { motion } from "framer-motion";
+
+const YOUTUBE_VIDEO_ID = "eWJpdT7mbAY";
 
 export default function GalleryHero() {
   return (
@@ -25,14 +28,26 @@ export default function GalleryHero() {
           </p>
         </div>
 
-        {/* Right: image placeholder */}
-        <div className="flex-1 w-full">
-          <Image
-            src={gHero}
-            alt="Gallery hero image"
-            className="w-full aspect-video h-full object-cover"
+        {/* Right: video */}
+        <motion.div
+          initial={{ opacity: 0, x: 40, scale: 0.96 }}
+          animate={{ opacity: 1, x: 0, scale: 1 }}
+          transition={{
+            duration: 0.8,
+            delay: 0.2,
+            ease: "easeOut",
+          }}
+          className="aspect-video w-full flex-1 overflow-hidden rounded-lg"
+        >
+          <iframe
+            src={`https://www.youtube-nocookie.com/embed/${YOUTUBE_VIDEO_ID}?autoplay=1&loop=1&playlist=${YOUTUBE_VIDEO_ID}&controls=0&modestbranding=1&rel=0&playsinline=1`}
+            title="Gallery hero video"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            className="h-full w-full"
           />
-        </div>
+        </motion.div>
       </div>
     </section>
   );

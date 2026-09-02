@@ -15,7 +15,7 @@ export default function SponsorHero() {
             Sponsorship
           </span>
 
-          <h1 className="text-4xl md:text-5xl font-bold text-[#D3E4FE leading-tight">
+          <h1 className="text-4xl md:text-5xl font-bold text-[#D3E4FE] leading-tight">
             Why our sponsors continue to work <br /> with us
           </h1>
 
